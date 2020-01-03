@@ -3,7 +3,7 @@
 @Description: 示例所用的通用工具类
 @Author: superz
 @Date: 2020-01-02 22:23:47
-@LastEditTime : 2020-01-03 17:03:57
+@LastEditTime : 2020-01-03 23:37:42
 '''
 
 
@@ -114,6 +114,13 @@ class PropertyDemo():
             print('%s正在玩飞行棋.' % self._name)
         else:
             print('%s正在玩斗地主.' % self._name)
+
+
+class CustomException(Exception):
+    """
+    自定义异常类型，只需要从Exception类继承即可(直接或间接)
+    """
+    pass
 
 
 """
