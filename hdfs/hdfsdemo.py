@@ -1,11 +1,16 @@
+# coding=utf-8
 '''
-hdfs demo示例
+@Description: hdfs demo示例
 安装第三方包：pip install hdfs
+
+@Author: superz
+@Date: 2020-01-02 09:35:32
+@LastEditTime : 2020-01-06 14:16:14
 '''
 
 from hdfs.client import Client
-
-client = Client("http://ep-001.hadoop:50070", session=False)
+from epoint import hdp
+client = Client(hdp.HDFS_NameNode_URL, session=False)
 # 查看的路径
 path = "/superz"
 
@@ -20,4 +25,5 @@ print(status_content)
 dirs_and_files = client.list(path)
 for dir_or_file in dirs_and_files:
     # todo 中文路径乱码
+    # print(str(bytes(dir_or_file),encoding="utf-8"))
     print(dir_or_file)
