@@ -3,7 +3,7 @@
 @Description: 分词和词云
 @Author: superz
 @Date: 2020-01-07 00:28:25
-@LastEditTime : 2020-01-07 01:34:34
+@LastEditTime : 2020-01-07 09:10:40
 '''
 
 import jieba
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     # 词云
     img = Image.open("./data/python-logo.jpg")
-    print(img.size)
+    # print(img.size)
     img = img.resize((600, 600), Image.ANTIALIAS)
     mask = np.array(img)
     wc = WordCloud(font_path=r"C:\Windows\Fonts\simfang.ttf",
