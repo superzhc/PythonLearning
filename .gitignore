@@ -1,2 +1,4 @@
 **/__pycache__/*.*
 epoint/*.*
+django/db.sqlite3
+.vscode/launch.json
