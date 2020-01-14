@@ -2,3 +2,4 @@
 epoint/*.*
 django/db.sqlite3
 .vscode/launch.json
+requirements.txt
