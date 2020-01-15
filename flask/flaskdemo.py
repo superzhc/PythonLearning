@@ -3,7 +3,7 @@
 @Description: flask创建restful api的示例
 @Author: superz
 @Date: 2020-01-10 15:25:51
-@LastEditTime : 2020-01-10 16:00:18
+@LastEditTime : 2020-01-15 10:23:59
 '''
 from sqlalchemy import create_engine
 from flask_restful import Resource, Api
