@@ -3,14 +3,17 @@
 @Description: Livy的Rest API工具类
 @Author: superz
 @Date: 2020-01-06 16:22:37
-@LastEditTime : 2020-01-06 20:30:39
+@LastEditTime : 2020-01-17 09:57:27
 '''
 
 import requests
+import json
 from epoint import huawei as config
 
 
 class livyutils():
+
+    __header = {"Content-Type": "application/json"}
 
     def __init__(self, url, sessionId):
         self._url = url
@@ -42,11 +45,35 @@ class livyutils():
         params["driverMemory"] = driverMemory
         params["driverCores"] = driverCores
         params["executorMemory"] = executorMemory
+        params["executorCores"] = executorCores
+        params["numExecutors"] = numExecutors
+        if not archives:
+            params["archives"] = archives
+        if not queue:
+            params["queue"] = queue
+        if not conf:
+            params["conf"] = conf
+        params["name"] = name
 
-        return params
+        r = requests.post(
+            url+"/sessions", data=json.dumps(params), headers=self.__header)
+        print(r.json())
+        # return params
+
+    def statements(self, code):
+        """
+        运行一个代码片段
+        """
+        params = {"code", code}
+        r = requests.post(url+"/statements",
+                          data=json.dumps(params), headers=self.__header)
+        print(r.json())
 
     @staticmethod
     def sessions(url, start=0, size=20):
+        """
+        获取session列表
+        """
         params = {}
         if start < 0:
             start = 0
