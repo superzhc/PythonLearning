@@ -3,7 +3,7 @@
 @Description: 数据定义示例
 @Author: superz
 @Date: 2020-01-16 09:00:28
-@LastEditTime : 2020-01-16 11:14:45
+@LastEditTime : 2020-01-16 20:01:36
 '''
 from pyhiveutils import hiveutils, ResultSet
 
